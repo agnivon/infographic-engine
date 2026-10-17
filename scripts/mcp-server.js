@@ -267,6 +267,12 @@ async function handleToolsCall(name, args) {
         file: 'timeline-roadmap.html',
         dimensions: '1200x1800',
         description: 'Multi-phase strategic architecture roadmap with connected milestones and tech tags.'
+      },
+      {
+        name: 'neon-velocity',
+        file: 'neon-velocity.html',
+        dimensions: '1200x1600',
+        description: '1980s retro synthwave movie poster with AI hero asset compositing, neon grids, and billing block credits.'
       }
     ];
     return {

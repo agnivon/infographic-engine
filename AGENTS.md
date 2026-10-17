@@ -21,7 +21,8 @@ When asked to create an infographic, poster, flyer, banner, or data chart:
      - **In Codex (including ChatGPT Desktop)**: Use **`gpt-image-2`** via `python "$HOME/.codex/skills/.system/imagegen/scripts/image_gen.py"` or built-in `image_gen`.
      - **In Claude**: Invoke the configured image generation tool/MCP or run the Python runner if `OPENAI_API_KEY` is set.
    - **Use Inline SVG** for clean UI icons, arrows, badges, and metric cards.
-3. **Compose HTML/CSS**: Write self-contained HTML using Google Fonts, CSS Grid, gradients, and embed the generated PNG cutout via `<img>` or CSS `background-image`. Set exact body dimensions (e.g. `1200x1600` or `1080x1350`).
+3. **Compose HTML/CSS**: Write self-contained HTML using Google Fonts, CSS Grid, and embedded assets. Set exact body dimensions (e.g. `1200x1600` or `1080x1350`).
+   - **Git Isolation Rule**: NEVER save user generations into `templates/`. Always write to `outputs/<name>.html` (or conversation scratch directory), which are gitignored.
 4. **Render to PNG**:
    - Via Terminal Command:
      ```bash

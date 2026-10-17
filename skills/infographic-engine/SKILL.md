@@ -72,17 +72,21 @@ Use inline `<svg>` and CSS for:
 - Timeline spines, grid borders, metric card glassmorphic panels, and gradient backgrounds.
 
 ### 3. Compose the Markup
-Embed the generated AI image asset into the HTML layout alongside Google Fonts, CSS Grid, and vector badges:
-```html
-<!-- Example Subject Hero Cutout -->
-<div class="hero-container">
-  <img src="file:///path/to/generated-asset.png" class="hero-image" alt="Subject" />
-</div>
-```
+Use one of the 5 official production templates as reference or compose custom markup:
+- `templates/comparison-infographic.html`: Two-column architecture/product comparison (`1200 x 1600`)
+- `templates/sports-matchday-poster.html`: Derby/championship sports matchday poster (`1080 x 1350`)
+- `templates/event-hackathon-poster.html`: Cyberpunk tech summit & hackathon flyer (`1200 x 1600`)
+- `templates/timeline-roadmap.html`: Multi-phase strategic architecture roadmap (`1200 x 1800`)
+- `templates/neon-velocity.html`: Retro 80s synthwave movie poster with AI hero asset (`1200 x 1600`)
+
+**Strict Output Location Rule (Git Isolation)**:
+- **NEVER save new user designs or generations into `templates/`**. The `templates/` directory is strictly reserved for the 5 official bundled baseline templates.
+- **Always save user-generated files into `outputs/`** (e.g. `outputs/<name>.html`, `outputs/<name>.png`) or the active conversation scratch directory (`<appDataDir>/brain/<conversation-id>/scratch/`).
+- The `outputs/` directory is completely gitignored, ensuring user designs and image assets are never tracked or pushed into the repository.
 
 **Essential Markup Rules**:
 - Lock body dimensions: `body { width: 1200px; height: 1600px; overflow: hidden; }`
-- Always import web fonts in `<head>` (e.g., `Plus Jakarta Sans`, `Space Grotesk`, `Montserrat`, `JetBrains Mono`).
+- Always import web fonts in `<head>` (e.g., `Plus Jakarta Sans`, `Space Grotesk`, `Montserrat`, `JetBrains Mono`, `Bebas Neue`).
 - Use vibrant gradients, glassmorphism (`backdrop-filter: blur(16px)`), subtle borders (`rgba(255,255,255,0.1)`), and glowing drop shadows.
 
 ### 4. Execute Local Headless Rendering

@@ -1,9 +1,12 @@
 # Dependencies
 node_modules/
 
-# Test and render outputs
+# User-generated outputs, scratch files, and renders (keep repo clean)
+outputs/
+examples/
 test_output/
 *.log
+test-*.png
 
 # Operating System artifacts
 .DS_Store
@@ -12,10 +15,7 @@ Thumbs.db
 # Agent session data
 .system_generated/
 
-# User-generated personal creations & local assets (keep repo clean, track only plugin logo)
-examples/
+# Plugin assets (track official bundled template assets only)
 assets/*
 !assets/logo.svg
-
-# Local custom templates / personal drafts
-templates/neon-velocity.html
+!assets/synthwave_hero.jpg

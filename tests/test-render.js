@@ -52,6 +52,15 @@ const tests = [
     height: 1800,
     scale: 2,
     wait: 2000
+  },
+  {
+    name: 'Neon Velocity (Retro Synthwave Movie Poster)',
+    template: path.join(rootDir, 'templates', 'neon-velocity.html'),
+    output: path.join(outDir, 'test-neon-velocity.png'),
+    width: 1200,
+    height: 1600,
+    scale: 2,
+    wait: 2000
   }
 ];
 

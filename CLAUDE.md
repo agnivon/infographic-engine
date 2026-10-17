@@ -83,6 +83,7 @@ Whenever a user asks for an infographic, poster, flyer, or matchday graphic:
 
 3. **Compose HTML/CSS Markup**:
    - Check `templates/` for starting patterns or write bespoke HTML5 with Google Fonts and CSS Grid.
+   - **Git Isolation Rule**: Always save user-generated HTML to `outputs/<name>.html` (or conversation scratch directory). NEVER save user designs into `templates/` (which is reserved exclusively for the 5 bundled templates).
    - Embed the generated subject PNG via `<img>` or CSS `background-image`.
    - Use high-contrast color palettes, radiant gradients, and glassmorphic panels.
    - Set fixed canvas dimensions on `body` with `overflow: hidden`.

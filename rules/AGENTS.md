@@ -46,12 +46,11 @@ The agent must **intelligently decide** the optimal asset source:
 
 ### Step 3: Markup Composition
 Create a standalone, self-contained HTML file:
-- Embed the generated PNG asset using an `<img>` tag or CSS `background-image`.
-- Import modern Google Fonts (e.g. `Plus Jakarta Sans`, `Space Grotesk`, `Montserrat`, `JetBrains Mono`, `Inter`).
+- **Git Isolation Rule**: NEVER save user generations into `templates/`. The `templates/` folder contains only the 5 official bundled baseline templates. Always write user designs to `outputs/<name>.html` or the active conversation scratch directory (`<appDataDir>/brain/<conversation-id>/scratch/<name>.html`), which are gitignored.
+- Embed the generated or fetched image asset using an `<img>` tag or CSS `background-image`.
+- Import modern Google Fonts (e.g. `Plus Jakarta Sans`, `Space Grotesk`, `Montserrat`, `JetBrains Mono`, `Bebas Neue`, `Inter`).
 - Use CSS Grid, Flexbox, glassmorphism (`backdrop-filter: blur(...)`), radiant gradients, and high-contrast color systems.
 - Set exact `width` and `height` on `body` matching the selected dimensions, with `overflow: hidden`.
-- Save the file to the active conversation's scratch directory:
-  `<appDataDir>/brain/<conversation-id>/scratch/<name>.html` (or workspace folder).
 
 ### Step 4: Local Headless Rendering
 Execute the plugin's bundled renderer using `run_command` or MCP `render_infographic`:

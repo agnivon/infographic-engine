@@ -248,16 +248,32 @@ The engine empowers agents to intelligently select the optimal asset pipeline:
 
 ---
 
+## Bundled Production Templates
+
+The plugin ships with 5 production-grade templates in `templates/`:
+
+| Template | File | Dimensions | Purpose |
+|---|---|---|---|
+| **Comparison Infographic** | [`templates/comparison-infographic.html`](templates/comparison-infographic.html) | `1200 x 1600` | Two-column architecture or product comparison with metrics & badges. |
+| **Sports Matchday Poster** | [`templates/sports-matchday-poster.html`](templates/sports-matchday-poster.html) | `1080 x 1350` | Championship derby fixture with club crests, athlete cutouts, & venue details. |
+| **Event / Hackathon Flyer** | [`templates/event-hackathon-poster.html`](templates/event-hackathon-poster.html) | `1200 x 1600` | Cyberpunk tech summit flyer with track cards, prizes, and register callouts. |
+| **Timeline & Roadmap** | [`templates/timeline-roadmap.html`](templates/timeline-roadmap.html) | `1200 x 1800` | Multi-phase strategic roadmap with milestone spines and tech pills. |
+| **Retro Synthwave Movie Poster** | [`templates/neon-velocity.html`](templates/neon-velocity.html) | `1200 x 1600` | 1980s synthwave movie poster (*Neon Velocity*) with AI hero art compositing & billing blocks. |
+
+> **Git Cleanliness**: All user-generated infographics, posters, and HTML files are saved to `outputs/` (or agent scratch folders), which are permanently gitignored so user designs never pollute the repository or get committed.
+
+---
+
 ## Testing & Verification Guide
 
 Follow these testing procedures to verify the plugin across all environments:
 
 ### 1. Automated Render Test Suite
-Runs the end-to-end rendering test against all 4 production templates at 2x Retina scale:
+Runs the end-to-end rendering test against all 5 production templates at 2x Retina scale:
 ```bash
 npm test
 ```
-*Expected result*: All templates render successfully to `test_output/` with exit code 0.
+*Expected result*: All 5 templates render successfully with exit code 0.
 
 ### 2. Browser Detection Diagnostic
 Verifies that your local Chrome, Edge, Chromium, or Brave executable is detected correctly:
