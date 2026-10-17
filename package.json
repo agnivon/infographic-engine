@@ -1,0 +1,38 @@
+{
+  "name": "infographic-engine",
+  "version": "1.0.0",
+  "description": "Antigravity plugin to generate publication-grade infographics, posters, and sports graphics with zero API keys.",
+  "main": "scripts/render.js",
+  "scripts": {
+    "test": "node tests/test-render.js",
+    "render": "node scripts/render.js",
+    "fetch-image": "node scripts/fetch-image.js",
+    "mcp": "node scripts/mcp-server.js",
+    "install-plugin": "node scripts/install.js",
+    "install:all": "node scripts/install.js --all",
+    "install:antigravity": "node scripts/install.js --antigravity",
+    "install:claude": "node scripts/install.js --claude",
+    "install:codex": "node scripts/install.js --codex"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agnivon/infographic-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agnivon/infographic-engine/issues"
+  },
+  "homepage": "https://github.com/agnivon/infographic-engine#readme",
+  "keywords": [
+    "antigravity",
+    "plugin",
+    "infographics",
+    "posters",
+    "graphics",
+    "renderer",
+    "headless",
+    "zero-api-keys",
+    "mcp"
+  ],
+  "author": "Agnivo Neogi <agnivon@gmail.com>",
+  "license": "Apache-2.0"
+}

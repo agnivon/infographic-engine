@@ -1,0 +1,14 @@
+{
+  "name": "infographic-engine-marketplace",
+  "description": "Publication-quality infographics, posters, and visual media with zero API keys.",
+  "owner": {
+    "name": "Agnivo Neogi"
+  },
+  "plugins": [
+    {
+      "name": "infographic-engine",
+      "source": "./",
+      "description": "Create publication-quality infographics, posters, and sports graphics using structured HTML/SVG markup and AI imagery with zero API keys."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Test and render outputs
+test_output/
+*.log
+
+# Operating System artifacts
+.DS_Store
+Thumbs.db
+
+# Agent session data
+.system_generated/
+
+# User-generated personal creations & local assets (keep repo clean, track only plugin logo)
+examples/
+assets/*
+!assets/logo.svg
+
+# Local custom templates / personal drafts
+templates/neon-velocity.html

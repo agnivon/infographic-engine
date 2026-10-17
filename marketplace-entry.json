@@ -1,0 +1,34 @@
+{
+  "name": "infographic-engine",
+  "displayName": "Infographic & Poster Engine",
+  "version": "1.0.0",
+  "description": "Create publication-quality infographics, posters, and sports graphics using structured HTML/SVG markup and AI imagery with zero API keys.",
+  "logo": "https://raw.githubusercontent.com/agnivon/infographic-engine/main/assets/logo.svg",
+  "suggestedPrompts": [
+    "Create an infographic comparing PostgreSQL and MongoDB with key features and metrics",
+    "Design an energetic sports matchday poster for an upcoming championship final",
+    "Generate a tech conference poster for an AI & Quantum Computing summit"
+  ],
+  "author": {
+    "name": "Agnivo Neogi",
+    "email": "agnivon@gmail.com"
+  },
+  "homepage": "https://github.com/agnivon/infographic-engine",
+  "repository": "https://github.com/agnivon/infographic-engine",
+  "license": "Apache-2.0",
+  "keywords": [
+    "infographics",
+    "posters",
+    "graphics",
+    "renderer",
+    "headless",
+    "zero-api-keys",
+    "svg",
+    "html",
+    "mcp"
+  ],
+  "source": {
+    "type": "git",
+    "url": "https://github.com/agnivon/infographic-engine.git"
+  }
+}

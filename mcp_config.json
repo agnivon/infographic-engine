@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "infographic-engine": {
+      "command": "node",
+      "args": ["scripts/mcp-server.js"]
+    }
+  }
+}

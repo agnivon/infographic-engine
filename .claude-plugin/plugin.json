@@ -1,0 +1,18 @@
+{
+  "name": "infographic-engine",
+  "version": "1.0.0",
+  "description": "Create publication-quality infographics, posters, and sports graphics using structured HTML/SVG markup and AI imagery with zero API keys.",
+  "author": {
+    "name": "Agnivo Neogi",
+    "email": "agnivon@gmail.com"
+  },
+  "keywords": [
+    "infographics",
+    "posters",
+    "sports",
+    "graphics",
+    "renderer",
+    "headless",
+    "zero-api-keys"
+  ]
+}

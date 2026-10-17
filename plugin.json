@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "infographic-engine",
+  "version": "1.0.0",
+  "description": "Create publication-quality infographics, posters, and sports graphics using structured HTML/SVG markup and AI imagery with zero API keys.",
+  "author": {
+    "name": "Agnivo Neogi",
+    "email": "agnivon@gmail.com"
+  },
+  "homepage": "https://github.com/agnivon/infographic-engine",
+  "repository": "https://github.com/agnivon/infographic-engine",
+  "license": "Apache-2.0",
+  "keywords": [
+    "infographics",
+    "posters",
+    "sports",
+    "graphics",
+    "headless",
+    "zero-api-keys",
+    "svg",
+    "html"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Infographic & Poster Engine",
+        "shortDescription": "Create publication-quality infographics, posters, and matchday graphics",
+        "longDescription": "An autonomous plugin that renders structured HTML/CSS/SVG markup directly to 2x Retina PNG images with zero external API keys.",
+        "developerName": "Agnivo Neogi",
+        "category": "Design & Visuals",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://github.com/agnivon/infographic-engine",
+        "defaultPrompt": [
+          "Create an infographic comparing PostgreSQL and MongoDB with key features and metrics",
+          "Design an energetic sports matchday poster for an upcoming championship final",
+          "Generate a tech conference poster for an AI & Quantum Computing summit"
+        ],
+        "logo": "./assets/logo.svg"
+      }
+    }
+  }
+}

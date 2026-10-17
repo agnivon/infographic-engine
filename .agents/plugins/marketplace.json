@@ -1,0 +1,20 @@
+{
+  "name": "infographic-engine-marketplace",
+  "interface": {
+    "displayName": "Infographic Engine Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "infographic-engine",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design & Visuals"
+    }
+  ]
+}

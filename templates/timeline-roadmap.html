@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Timeline & Milestone Roadmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: rgba(18, 24, 38, 0.8);
+      --border: rgba(255, 255, 255, 0.1);
+      --accent-blue: #3b82f6;
+      --accent-emerald: #10b981;
+      --accent-purple: #8b5cf6;
+      --accent-amber: #f59e0b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 1200px;
+      height: 1800px;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 70% 90%, rgba(16, 185, 129, 0.12) 0%, transparent 40%);
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: #f1f5f9;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      font-size: 13px;
+      font-weight: 700;
+      color: #60a5fa;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      background: linear-gradient(180deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* Timeline Container */
+    .timeline {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 20px 0;
+    }
+    /* Central Spine */
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      bottom: 40px;
+      left: 50%;
+      width: 4px;
+      background: linear-gradient(180deg, var(--accent-blue) 0%, var(--accent-purple) 50%, var(--accent-emerald) 100%);
+      transform: translateX(-50%);
+      border-radius: 2px;
+      opacity: 0.5;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Center Node Icon */
+    .node-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .node-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #0f172a;
+      border: 3px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+    .node-1 { border-color: var(--accent-blue); color: var(--accent-blue); }
+    .node-2 { border-color: var(--accent-purple); color: var(--accent-purple); }
+    .node-3 { border-color: var(--accent-amber); color: var(--accent-amber); }
+    .node-4 { border-color: var(--accent-emerald); color: var(--accent-emerald); }
+
+    /* Content Cards */
+    .timeline-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px 28px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .card-left { text-align: right; margin-right: 20px; }
+    .card-right { text-align: left; margin-left: 20px; }
+
+    .phase-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .badge-p1 { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+    .badge-p2 { background: rgba(139, 92, 246, 0.15); color: #c084fc; }
+    .badge-p3 { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+    .badge-p4 { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+    .milestone-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+    .milestone-desc {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .tags-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .card-left .tags-row { justify-content: flex-end; }
+    .pill {
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 3px 8px;
+      border-radius: 6px;
+      color: #cbd5e1;
+    }
+
+    /* Opposite Date Callout */
+    .date-callout {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 24px;
+      font-weight: 700;
+      color: #64748b;
+    }
+    .date-left { text-align: right; padding-right: 20px; }
+    .date-right { text-align: left; padding-left: 20px; }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #64748b;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">Strategic Architecture</div>
+    <h1>System Evolution Roadmap</h1>
+    <p class="subtitle">A phased operational blueprint transitioning monolithic infrastructure into high-concurrency autonomous microservices.</p>
+  </div>
+
+  <!-- Timeline Flow -->
+  <div class="timeline">
+
+    <!-- Milestone 1 -->
+    <div class="timeline-item">
+      <div class="timeline-card card-left">
+        <span class="phase-badge badge-p1">Phase 1 • Q1</span>
+        <div class="milestone-title">Decoupling & Observability</div>
+        <div class="milestone-desc">Decompose core monolithic endpoints into decoupled domain events. Implement OpenTelemetry tracing and structured telemetry across distributed nodes.</div>
+        <div class="tags-row">
+          <span class="pill">Event Sourcing</span>
+          <span class="pill">Kafka</span>
+          <span class="pill">OTel</span>
+        </div>
+      </div>
+      <div class="node-center">
+        <div class="node-circle node-1">⚡</div>
+      </div>
+      <div class="date-callout date-right">JAN - MAR</div>
+    </div>
+
+    <!-- Milestone 2 -->
+    <div class="timeline-item">
+      <div class="date-callout date-left">APR - JUN</div>
+      <div class="node-center">
+        <div class="node-circle node-2">🧠</div>
+      </div>
+      <div class="timeline-card card-right">
+        <span class="phase-badge badge-p2">Phase 2 • Q2</span>
+        <div class="milestone-title">Autonomous Agent Integration</div>
+        <div class="milestone-desc">Introduce autonomous AI coprocessors for real-time log anomaly detection, automated schema migrations, and generative debugging runbooks.</div>
+        <div class="tags-row">
+          <span class="pill">Agent Teams</span>
+          <span class="pill">Vector DB</span>
+          <span class="pill">Auto-Healing</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Milestone 3 -->
+    <div class="timeline-item">
+      <div class="timeline-card card-left">
+        <span class="phase-badge badge-p3">Phase 3 • Q3</span>
+        <div class="milestone-title">Global Multi-Region Mesh</div>
+        <div class="milestone-desc">Deploy active-active multi-region Kubernetes clusters with sub-10ms edge caching and automated geo-DNS failover protocols.</div>
+        <div class="tags-row">
+          <span class="pill">Anycast</span>
+          <span class="pill">Multi-Region</span>
+          <span class="pill">Envoy</span>
+        </div>
+      </div>
+      <div class="node-center">
+        <div class="node-circle node-3">🌐</div>
+      </div>
+      <div class="date-callout date-right">JUL - SEP</div>
+    </div>
+
+    <!-- Milestone 4 -->
+    <div class="timeline-item">
+      <div class="date-callout date-left">OCT - DEC</div>
+      <div class="node-center">
+        <div class="node-circle node-4">🚀</div>
+      </div>
+      <div class="timeline-card card-right">
+        <span class="phase-badge badge-p4">Phase 4 • Q4</span>
+        <div class="milestone-title">Self-Optimizing Architecture</div>
+        <div class="milestone-desc">Achieve autonomous horizontal auto-scaling, dynamic query rewrite engine, and zero-downtime continuous deployment pipelines.</div>
+        <div class="tags-row">
+          <span class="pill">Autonomous Scaling</span>
+          <span class="pill">Zero Downtime</span>
+          <span class="pill">99.999% SLA</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>ANTIGRAVITY INFOGRAPHIC ENGINE</span>
+    <span>HEADLESS LOCAL RENDERING • ZERO API KEYS</span>
+  </div>
+
+</body>
+</html>
